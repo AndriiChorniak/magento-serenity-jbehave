@@ -24,6 +24,16 @@ public class DefinitionSteps {
         endUser.pressLoginButton();
     }
 
+    @When("Click on login button")
+    public void clickOnLoginButton(){
+        endUser.pressLoginButton();
+    }
+
+    @When("click on \"Forgot your password\" button")
+    public void clickOnForgotYourPassBtn(){
+        endUser.pressForgotPassBtn();
+    }
+
     @Then("I get My Account Dashboard page with logged in status.")
     public void verifyLoggedInOnDashboardPage() {
         endUser.verifyOnDashboardPage();
@@ -33,5 +43,15 @@ public class DefinitionSteps {
     @Then("Authentication failed")
     public void verifyFailureAuthentication() {
         endUser.verifyErrorMessage();
+    }
+
+    @Then("Observe all asterisks")
+    public void observeAllAsterisks(){
+        endUser.verifyAsterisks();
+    }
+
+    @Then("I redirect to forgotpassword page")
+    public void observeForgotPasswordPage(){
+        endUser.verifyForgotPassPage();
     }
 }

@@ -5,7 +5,8 @@ package com.epam.core.enums;
  */
 public enum Users {
 
-    VALID_USER("andrey.chornyak@mail.ru", "Qwerty12345."), FAKE_USER("fakeUser@gmail.com", "qwerty12345.");
+    VALID_USER("andrey.chornyak@mail.ru", "Qwerty12345."),
+    FAKE_USER("fakeUser@gmail.com", "qwerty12345.");
 
     Users(String email, String password) {
         this.email = email;

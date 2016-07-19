@@ -54,8 +54,8 @@ public class WrappedSteps extends ScenarioSteps {
      * @param expectedText
      */
     protected void elementShouldContainsOnlyText(WebElementFacade element, String expectedText){
-        logger.info("Current element should contain only this text {}", expectedText);
-        logger.debug("Current element should contain only this text {}", expectedText);
+        logger.info("Current element should contain only this text [{}]", expectedText);
+        logger.debug("Current element should contain only this text [{}]", expectedText);
         element.shouldContainOnlyText(expectedText);
     }
 
@@ -64,6 +64,8 @@ public class WrappedSteps extends ScenarioSteps {
      * @param element
      */
     protected void elementShouldBePresent(WebElementFacade element){
+        logger.info("Current element should be present.");
+        logger.debug("Current element should be present.");
         element.shouldBePresent();
     }
 }

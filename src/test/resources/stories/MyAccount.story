@@ -13,8 +13,11 @@ When Entering credential FAKE_USER
 Then Authentication failed
 
 Scenario:03 All required asterisks should be present
-Meta:
-@pending
 Given I am on Login page.
-When click on login button
-Then observe all asterisks
+When Click on login button
+Then Observe all asterisks
+
+Scenario:04 Verify "Forgot your password" button
+Given I am on Login page.
+When click on "Forgot your password" button
+Then I redirect to forgotpassword page
