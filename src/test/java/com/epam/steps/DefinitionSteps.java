@@ -2,6 +2,7 @@ package com.epam.steps;
 
 import com.epam.core.enums.Users;
 import com.epam.steps.serenity.EndUserSteps;
+import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.Steps;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
@@ -12,9 +13,14 @@ public class DefinitionSteps {
     @Steps
     EndUserSteps endUser;
 
-    @Given("I am on Login page.")
+    @Given("User is on Login page.")
     public void openLoginPage() {
         endUser.openLoginPage();
+    }
+
+    @Given("User is on Forgot Password page")
+    public void openForgotPasswordPage(){
+        endUser.openForgotPasswordPage();
     }
 
     @When("Entering credential $VALID_USER")
@@ -34,6 +40,11 @@ public class DefinitionSteps {
         endUser.pressForgotPassBtn();
     }
 
+    @When("click on \"Go back\" button")
+    public void clickOnGoBackBtn(){
+        endUser.pressGoBack();
+    }
+
     @Then("I get My Account Dashboard page with logged in status.")
     public void verifyLoggedInOnDashboardPage() {
         endUser.verifyOnDashboardPage();
@@ -50,8 +61,13 @@ public class DefinitionSteps {
         endUser.verifyAsterisks();
     }
 
-    @Then("I redirect to forgotpassword page")
+    @Then("I redirect to Forgot Password page")
     public void observeForgotPasswordPage(){
         endUser.verifyForgotPassPage();
+    }
+
+    @Then("User redirect to Login page")
+    public void verifyUserIsOnLoginPage(){
+        endUser.verifyLoginPage();
     }
 }

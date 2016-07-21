@@ -21,4 +21,7 @@ public class LoginPage extends PageObject {
 
     @FindBy(name = "send")
     public static WebElementFacade BUTTON_LOGIN;
+
+    @FindBy(xpath = "//div[@class='account-login']//h1")
+    public static WebElementFacade PAGE_TITLE_LOGIN;
 }

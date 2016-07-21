@@ -17,4 +17,6 @@ public class ForgotPasswordPage extends PageObject {
     @FindBy(xpath = "//div[@class='page-title']/h1")
     public static WebElementFacade PAGE_TITLE_FORGOT_PASSWORD;
 
+    @FindBy(xpath = "//p[@class='back-link']/a")
+    public static WebElementFacade GO_BACK_BTN;
 }

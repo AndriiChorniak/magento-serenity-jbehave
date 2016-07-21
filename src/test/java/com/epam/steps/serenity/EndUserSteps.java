@@ -9,6 +9,7 @@ import org.assertj.core.api.SoftAssertions;
 
 import static com.epam.core.Constants.*;
 import static com.epam.pages.DashBoardPage.*;
+import static com.epam.pages.ForgotPasswordPage.GO_BACK_BTN;
 import static com.epam.pages.ForgotPasswordPage.PAGE_TITLE_FORGOT_PASSWORD;
 import static com.epam.pages.LoginPage.*;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -77,5 +78,23 @@ public class EndUserSteps extends WrappedSteps {
         logger.debug("Verify that current URL is Dashboard page");
         assertThat(getDriver().getCurrentUrl()).isEqualTo(FORGOT_PASSWORD_PAGE_URL);
         elementShouldContainsOnlyText(PAGE_TITLE_FORGOT_PASSWORD, "Forgot Your Password?");
+    }
+
+    @Step
+    public void openForgotPasswordPage() {
+        openPage(forgotPasswordPage, "Forgot password");
+    }
+
+    @Step
+    public void pressGoBack() {
+        click(GO_BACK_BTN);
+    }
+
+    @Step
+    public void verifyLoginPage() {
+        logger.info("Verify that current URL is Login page");
+        logger.debug("Verify that current URL is Login page");
+        assertThat(getDriver().getCurrentUrl()).contains(LOGIN_PAGE_URL);
+        elementShouldContainsOnlyText(PAGE_TITLE_LOGIN, "Login or Create an Account");
     }
 }
